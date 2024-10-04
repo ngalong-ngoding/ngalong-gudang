@@ -8,9 +8,8 @@ $fatahController = new FatahController();
 
 $routes = [
     "fatah" => [$fatahController, "index"],
-    "arya" => [$fatahController, "index"],
     // nanti kalau mau ditambahin berarti
-    // "index" => [$barangKeluarController, "index"];
+    // "routenya" => [$namaController, "index"];
 ];
 
 // Ini buat ngambil route yang ada di url kita, misalnya localhost/ngalong-gudang/index.php?route=fatah

@@ -8,6 +8,9 @@ $fatahController = new FatahController();
 
 $routes = [
     "fatah" => [$fatahController, "index"],
+    "fatah/store" => [$fatahController, "store"],
+    "fatah/delete" => [$fatahController, "delete"],
+    "fatah/edit" => [$fatahController, "edit"],
     // nanti kalau mau ditambahin berarti
     // "routenya" => [$namaController, "index"];
 ];

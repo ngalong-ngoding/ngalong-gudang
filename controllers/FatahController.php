@@ -12,6 +12,8 @@ class FatahController
     {
         $fatahModel = new Fatah();
         $data = $fatahModel->getAllData();
+        // Ini code yang baru ditambahin, fungsinya buat nyiapin variable buat digunain di views/fatah.php
+        $games = $fatahModel->getAllGames();
         include "./views/fatah.php";
     }
 }

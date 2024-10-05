@@ -14,4 +14,14 @@ class Fatah
             ["id" => 2, "hobby" => "Ngoding"] // gak cuman id sama hobby, kalau mau ditambah yang lain juga gak masalah (ini contoh cuman 2)
         ];
     }
+
+    // Ini kalau mau nambahin fungsi baru lagi (buat contoh) -> coba cek di controllers/FatahController.php (ada perubahan code)
+    public function getAllGames()
+    {
+        return [
+            ["id" => 11, "game" => "God of War: Ragnarok"],
+            ["id" => 22, "game" => "Grand Theft Auto: V"],
+            ["id" => 33, "game" => "A Way Out"],
+        ];
+    }
 }

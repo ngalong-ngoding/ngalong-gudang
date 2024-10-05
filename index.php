@@ -3,14 +3,17 @@
 // dihalaman ini itu digunain semacam untuk pintu masuk utamanya (route)
 
 require_once "./controllers/FatahController.php";
+require_once "./controllers/MajidController.php";
 
 $fatahController = new FatahController();
+$MajidController = new MajidController();
 
 $routes = [
     "fatah" => [$fatahController, "index"],
     "fatah/store" => [$fatahController, "store"],
     "fatah/delete" => [$fatahController, "delete"],
     "fatah/edit" => [$fatahController, "edit"],
+    "majid" => [$MajidController, "index"],
     // nanti kalau mau ditambahin berarti
     // "routenya" => [$namaController, "index"];
 ];

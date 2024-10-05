@@ -10,6 +10,9 @@ $MajidController = new MajidController();
 
 $routes = [
     "fatah" => [$fatahController, "index"],
+    "fatah/store" => [$fatahController, "store"],
+    "fatah/delete" => [$fatahController, "delete"],
+    "fatah/edit" => [$fatahController, "edit"],
     "majid" => [$MajidController, "index"],
     // nanti kalau mau ditambahin berarti
     // "routenya" => [$namaController, "index"];

@@ -12,7 +12,7 @@
             <?php include "./includes/sidebar.php" ?>
             <div class="col-10 p-4">
                 
-                <p class="fs-1">Muhammad Nur Majid</p>
+                <p class="fs-1">majidilharam_</p>
          <p class="fs-3">Hobi Saya:</p>
          <div class="list-group">
          <?php foreach ($data as $item): ?>

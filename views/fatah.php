@@ -28,7 +28,7 @@
                     <!-- dibagian $games as $game ($games namanya harus sama kayak di controller tadi) kalau ($game nya ini bebas namanya apa aja) -->
                     <?php foreach ($gamess as $game): ?>
                         <!-- trus liat dibagian echo $game["game" ("game" ini harus sama kayak di model tadi key nya)] -->
-                        <li class="list-group-item"><?php echo $game["game"] ?></li>
+                        <li class="list-group-item"><?php echo $gamess["game"] ?></li>
                     <?php endforeach ?>
                     </ul>
                 </div>

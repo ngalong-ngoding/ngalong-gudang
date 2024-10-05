@@ -21,7 +21,7 @@
    ```
 7. Selamat anda berhasil menjalankan projectnya
 
-## Cara kontribusi project ngalong-gudang
+## Cara kontribusi project ngalong-gudang (push)
 
 1. Masih di vscode yang sebelumnya lalu buka terminal `ctrl + j`
 2. Pertama buat branch hasil kerjaan kita terlebih dahulu, caranya dengan mengetik (nama branch tersebut bebas sesuai apa yang dikerjakan)
@@ -45,3 +45,10 @@
 11. (optional bisa di skip) setelah masuk ke pr page di sebelah kanan ada tulisan assignees pencet tulisan assign yourself
 12. Setelah itu pencet tombol hijau bertuliskan Create pull request
 13. Selamat anda sudah berhasil melakukan pr (selanjutnya bisa chat orang yang review buat minta tolong di merge pull request)
+
+## Cara sinkronisasi project local kita dengan repo di github (pull)
+1. Masih di vscode yang sebelumnya lalu buka terminal `ctrl + j`
+2. Lalu ketikan perintah dibawah ini fungsinya untuk mengupdate local kita dengan repo di server
+   ```bash
+   git pull origin main
+3. Selamat anda telah berhasil sinkronisasi project local dengan repo di github

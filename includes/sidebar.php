@@ -2,7 +2,7 @@
     <ul class="nav nav-pills flex-column gap-1">
         <li class="nav-item">
             <a href="fatah" class="nav-link rounded-1 <?php echo isset($_GET["route"]) && $_GET["route"] == 'fatah' ? 'active' : 'text-light-emphasis'; ?>">
-                <i class="bi bi-house-door"></i> Fatah <?php echo isset($_GET["route"]) && $_GET["route"] ?>
+                <i class="bi bi-house-door"></i> Fatah
             </a>
         </li>
         <li class="nav-item">

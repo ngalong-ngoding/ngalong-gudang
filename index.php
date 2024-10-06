@@ -1,6 +1,6 @@
 <?php
 
-// dihalaman ini itu digunain semacam untuk pintu masuk utamanya (route)
+
 
 require_once "./controllers/FatahController.php";
 require_once "./controllers/MajidController.php";
@@ -10,16 +10,20 @@ $MajidController = new MajidController();
 
 $routes = [
     "fatah" => [$fatahController, "index"],
+    "fatah/store" => [$fatahController, "store"],
+    "fatah/delete" => [$fatahController, "delete"],
+    "fatah/edit" => [$fatahController, "edit"],
     "majid" => [$MajidController, "index"],
-    // nanti kalau mau ditambahin berarti
-    // "routenya" => [$namaController, "index"];
+    "majid/store" => [$MajidController, "store"],
+    "majid/delete" => [$MajidController, "delete"],
+    "majid/edit" => [$MajidController, "edit"], 
+   
 ];
 
-// Ini buat ngambil route yang ada di url kita, misalnya localhost/ngalong-gudang/index.php?route=fatah
-// berarti yang diambil sama GET["route"] = "fatah" nya
-$action = $_GET["route"] ?? header("Location: fatah");;
 
-// Ini buat ngecek si variabel $action itu beneran ada gak di $routes
+$action = $_GET["route"] ?? header("Location: majid");;
+
+
 if (array_key_exists($action, $routes)) {
     call_user_func($routes[$action]);
 } else {

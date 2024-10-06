@@ -13,25 +13,20 @@
             <?php include "./includes/sidebar.php" ?>
             <div class="col-10 p-4">
                 <p class="fs-1">Nama saya Fatah</p>
-                <p class="fs-3">Hobi saya:</p>
-                <div class="list-group mb-4">
-                    <!-- Kalau kalian inget, ini tuh kayak looping while di code yang crud php sebelumnya -->
-                    <?php foreach ($data as $item): ?>
-                        <li class="list-group-item"><?php echo $item["hobby"] ?></li>
-                    <?php endforeach ?>
-                    </ul>
-                </div>
-                <!-- Ini buat ngelooping yang $games tadi -->
                 <p class="fs-3">Game kesukaan saya:</p>
-                <div class="list-group">
+                <div class="list-group mb-4">
                     <!-- Intinya ini buat ngelooping $games nya -->
                     <!-- dibagian $games as $game ($games namanya harus sama kayak di controller tadi) kalau ($game nya ini bebas namanya apa aja) -->
-                    <?php foreach ($gamess as $game): ?>
+                    <?php foreach ($fatah->getAllGames() as $game): ?>
                         <!-- trus liat dibagian echo $game["game" ("game" ini harus sama kayak di model tadi key nya)] -->
                         <li class="list-group-item"><?php echo $gamess["game"] ?></li>
                     <?php endforeach ?>
                     </ul>
                 </div>
+                <form method="POST" action="?route=fatah/store" class="d-flex gap-1 justify-content-end">
+                    <input name="game" class="w-25 form-control" placeholder="Masukan game yang ingin ditambah" />
+                    <button type="submit" name="submit" class="btn btn-success">Tambah Game</button>
+                </form>
             </div>
         </div>
 </body>

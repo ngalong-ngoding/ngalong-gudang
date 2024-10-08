@@ -4,13 +4,19 @@
 
 require_once "./controllers/FatahController.php";
 require_once "./controllers/RohimContoller.php";
+require_once "./controllers/MajidController.php";
 
 $fatahController = new FatahController();
 $rohimController = new RohimContoller();
+$MajidController = new MajidController();
 
 $routes = [
     "fatah" => [$fatahController, "index"],
     "rohim" => [$rohimController, "index"],
+    "fatah/store" => [$fatahController, "store"],
+    "fatah/delete" => [$fatahController, "delete"],
+    "fatah/edit" => [$fatahController, "edit"],
+    "majid" => [$MajidController, "index"],
     // nanti kalau mau ditambahin berarti
     // "routenya" => [$namaController, "index"];
 ];

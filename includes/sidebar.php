@@ -11,6 +11,11 @@
             </a>
         </li>
         <li class="nav-item">
+            <a href="aurandy" class="nav-link <?php echo isset($_GET["route"]) && $_GET["route"] == 'aurandy' ? 'active' : 'text-light-emphasis'; ?>">
+                <i class="bi bi-person"></i> Aurandy
+            </a>
+        </li>
+        <li class="nav-item">
             <a href="azri" class="nav-link <?php echo isset($_GET["route"]) && $_GET["route"] == 'azri' ? 'active' : 'text-light-emphasis'; ?>">
                 <i class="bi bi-person"></i> Azri
             </a>

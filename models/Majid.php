@@ -16,10 +16,10 @@ class Majid
             $this->daftarGame = $_SESSION["daftarGame"];
         } else {
             $this->daftarGame = [
-                ["id" => 1, "game" => "God of War: Ragnarok"],
-                ["id" => 2, "game" => "Grand Theft Auto: V"],
-                ["id" => 3, "game" => "A Way Out"],
+                
             ];
+               
+            
         }
     }
 

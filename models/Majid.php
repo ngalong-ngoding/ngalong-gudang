@@ -13,7 +13,7 @@ class Majid
     {
         
         if (isset($_SESSION["daftarGameMajid"])) {
-            $this->daftarGame = $_SESSION["daftarGameMajid"];
+            $this->daftarGameMajid = $_SESSION["daftarGameMajid"];
         } else {
             $this->daftarGameMajid = [
                 

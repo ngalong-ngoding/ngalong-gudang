@@ -17,8 +17,8 @@ class Fatah
     public function __construct()
     {
         // In buat kasih logic, kalau misalnya data di session ada maka ambilnya disitu kalau gk ada bikin baru
-        if (isset($_SESSION["daftarGame"])) {
-            $this->daftarGame = $_SESSION["daftarGame"];
+        if (isset($_SESSION["daftarGameFatah"])) {
+            $this->daftarGame = $_SESSION["daftarGameFatah"];
         } else {
             $this->daftarGame = [
                 ["id" => 1, "game" => "God of War: Ragnarok"],
@@ -45,7 +45,7 @@ class Fatah
             "game" => $game
         ];
         // Sekaligus update penyimpanan di session tadi
-        $_SESSION["daftarGame"] = $this->daftarGame;
+        $_SESSION["daftarGameFatah"] = $this->daftarGame;
     }
 
     // Ini fungsi untuk hapus game dari daftarGame
@@ -57,7 +57,7 @@ class Fatah
                 unset($this->daftarGame[$key]);
                 // Update variable yang diatas
                 $this->daftarGame = array_values($this->daftarGame);
-                $_SESSION["daftarGame"] = $this->daftarGame;
+                $_SESSION["daftarGameFatah"] = $this->daftarGame;
                 return true;
             }
         }
@@ -72,7 +72,7 @@ class Fatah
                 // update nama game
                 $this->daftarGame[$key]["game"] = $newGame;
                 // Update variable yang diatas
-                $_SESSION["daftarGame"] = $this->daftarGame;
+                $_SESSION["daftarGameFatah"] = $this->daftarGame;
                 return true;
             }
         }

@@ -6,16 +6,16 @@ class Majid
 {
 
     
-    private $daftarGame = [];
+    private $daftarGameMajid = [];
 
     
     public function __construct()
     {
         
-        if (isset($_SESSION["daftarGame"])) {
-            $this->daftarGame = $_SESSION["daftarGame"];
+        if (isset($_SESSION["daftarGameMajid"])) {
+            $this->daftarGame = $_SESSION["daftarGameMajid"];
         } else {
-            $this->daftarGame = [
+            $this->daftarGameMajid = [
                 
             ];
                
@@ -26,30 +26,30 @@ class Majid
     
     public function getAllGames()
     {
-        return $this->daftarGame;
+        return $this->daftarGameMajid;
     }
 
     
     public function tambahGame($game)
     {
         
-        $newId = count($this->daftarGame) + 1;
-        $this->daftarGame[] = [
+        $newId = count($this->daftarGameMajid) + 1;
+        $this->daftarGameMajid[] = [
             "id" => $newId,
             "game" => $game
         ];
 
-        $_SESSION["daftarGame"] = $this->daftarGame;
+        $_SESSION["daftarGameMajid"] = $this->daftarGameMajid;
     }
 
     
     public function hapusGame($id)
     {
-        foreach ($this->daftarGame as $key => $game) {
+        foreach ($this->daftarGameMajid as $key => $game) {
             if ($game["id"] == $id) {
-                unset($this->daftarGame[$key]);
-                $this->daftarGame = array_values($this->daftarGame);
-                $_SESSION["daftarGame"] = $this->daftarGame;
+                unset($this->daftarGameMajid[$key]);
+                $this->daftarGameMajid = array_values($this->daftarGameMajid);
+                $_SESSION["daftarGameMajid"] = $this->daftarGameMajid;
                 return true;
             }
         }
@@ -59,10 +59,10 @@ class Majid
    
     public function editGame($id, $newGame)
     {
-        foreach ($this->daftarGame as $key => $game) {
+        foreach ($this->daftarGameMajid as $key => $game) {
             if ($game["id"] == $id) {
-                $this->daftarGame[$key]["game"] = $newGame;
-                $_SESSION["daftarGame"] = $this->daftarGame;
+                $this->daftarGameMajid[$key]["game"] = $newGame;
+                $_SESSION["daftarGameMajid"] = $this->daftarGameMajid;
                 return true;
             }
         }

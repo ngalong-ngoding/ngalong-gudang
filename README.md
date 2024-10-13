@@ -1,5 +1,6 @@
 ## Cara memulai project ngalong-gudang
 
+Penting: pastiin udah terinstall xampp sebelum lanjut
 1. Buka folder xampp/htdocs
 2. Klik kanan dan klik git bash here
 3. Lalu copy atau ketikan

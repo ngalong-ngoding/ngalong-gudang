@@ -4,9 +4,9 @@
     }
 </style>
 
-<div class="navbar bg-gray-800 text-white p-4 flex items-center justify-between">
-    <span class="cursor-pointer text-xl mr-4" onclick="toggleSidebar()">☰</span>
-    <h1 class="text-2xl font-semibold">GAMES</h1>
+<div class="navbar bg-gray-800 text-black p-4 flex items-center justify-between">
+    <span class="cursor-pointer text-white text-xl mr-4" onclick="toggleSidebar()">☰</span>
+    <h1 class="text-2xl text-white font-semibold">GAMES</h1>
     
     <form method="GET" action="" class="flex gap-2 ml-auto">
         <input name="search" class="p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Cari game..." value="<?php echo isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; ?>" />

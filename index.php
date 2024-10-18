@@ -16,28 +16,30 @@ $DaniController = new DaniController();
 
 $routes = [
     "fatah" => [$fatahController, "index"],
+    "fatah/store" => [$fatahController, "store"],
+    "fatah/delete" => [$fatahController, "delete"],
+    "fatah/edit" => [$fatahController, "edit"],
+
     "rohim" => [$rohimController, "index"],
     "rohim/store" => [$rohimController, "store"],
     "rohim/delete" => [$rohimController, "delete"],
     "rohim/edit" => [$rohimController, "edit"],
-    "fatah/store" => [$fatahController, "store"],
-    "fatah/delete" => [$fatahController, "delete"],
-    "fatah/edit" => [$fatahController, "edit"],
+
     "majid" => [$MajidController, "index"],
     "majid/store" => [$MajidController, "store"],
     "majid/delete" => [$MajidController, "delete"],
-    "majid/edit" => [$MajidController, "edit"], 
+    "majid/edit" => [$MajidController, "edit"],
 
     "azri" => [$AzriController, "index"],
     "azri/store" => [$AzriController, "store"],
     "azri/delete" => [$AzriController, "delete"],
-    "azri/edit" => [$AzriController, "edit"], 
+    "azri/edit" => [$AzriController, "edit"],
 
     "dani" => [$DaniController, "index"],
     "dani/store" => [$DaniController, "store"],
     "dani/delete" => [$DaniController, "delete"],
-    "dani/edit" => [$DaniController, "edit"], 
-   
+    "dani/edit" => [$DaniController, "edit"],
+
 ];
 
 $action = $_GET["route"] ?? header("Location: azri");;

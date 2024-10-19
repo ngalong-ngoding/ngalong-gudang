@@ -7,12 +7,14 @@ require_once "./controllers/RohimContoller.php";
 require_once "./controllers/MajidController.php";
 require_once "./controllers/AzriController.php";
 require_once "./controllers/DaniController.php";
+require_once "./controllers/AurandyController.php";
 
 $fatahController = new FatahController();
 $rohimController = new RohimContoller();
 $MajidController = new MajidController();
 $AzriController = new AzriController();
 $DaniController = new DaniController();
+$AurandyController = new AurandyController();
 
 $routes = [
     "fatah" => [$fatahController, "index"],
@@ -40,9 +42,14 @@ $routes = [
     "dani/delete" => [$DaniController, "delete"],
     "dani/edit" => [$DaniController, "edit"],
 
+    "aurandy" => [$AurandyController, "index"],
+    "aurandy/store" => [$AurandyController, "store"],
+    "aurandy/delete" => [$AurandyController, "delete"],
+    "aurandy/edit" => [$AurandyController, "edit"],
+    
 ];
 
-$action = $_GET["route"] ?? header("Location: azri");;
+$action = $_GET["route"] ?? header("Location: aurandy");;
 
 
 if (array_key_exists($action, $routes)) {

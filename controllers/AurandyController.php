@@ -2,47 +2,36 @@
 
 require_once "./models/Aurandy.php";
 
+
+
 class AurandyController
 {
     public function index()
     {
-        // Inisialisasi model
-        $dani = new Aurandy();
+        $aurandy = new Aurandy();
         
-        // Mengambil semua game
-        $games = $dani->getAllGames();
-
-        // Memuat view dan mengirimkan data game
+        $games = $aurandy->getAllGames();
         include "./views/aurandy.php";
     }
-
     public function store()
     {
-        // Cek apakah form di-submit
+        
         if (isset($_POST["submit"])) {
             
-            $dani = new Aurandy();
+            $aurandy = new Aurandy();
             $game = $_POST["game"];
-            
-            // Tambah game baru
-            $dani->tambahGame($game);
-            
-            // Redirect ke halaman utama
-            header("Location: ?route=aurandy");
+            $aurandy->tambahGame($game);
+            header("Location: aurandy");
         }
     }
-
     public function delete()
     {
-        // Inisialisasi model
-        $dani = new Aurandy();
+        $aurandy = new Aurandy();
         $id = $_GET["id"] ?? null;
-        
-        // Hapus game jika ID valid
         if ($id) {
-            $deleted = $dani->hapusGame($id);  // Ganti $aurandy dengan $dani
+            $deleted = $aurandy->hapusGame($id);
             if ($deleted) {
-                header("Location: ?route=aurandy");
+                header("Location: aurandy");
                 exit;
             } else {
                 echo "Game tidak ditemukan.";
@@ -51,25 +40,21 @@ class AurandyController
             echo "ID tidak valid.";
         }
     }
-
     public function edit()
     {
-        // Inisialisasi model
-        $dani = new Aurandy();
+        $aurandy = new Aurandy();
         $id = $_GET["id"] ?? null;
-        $newGame = $_POST["game"] ?? null;  // Pastikan nama game ada
-        
-        // Update game jika ID dan nama game valid
+        $newGame = $_POST["game"];
         if ($id && $newGame) {
-            $updated = $dani->editGame($id, $newGame);  // Ganti $aurandy dengan $dani
+            $updated = $aurandy->editGame($id, $newGame);
             if ($updated) {
-                header("Location: ?route=aurandy");
+                header("Location: aurandy");
                 exit;
             } else {
-                echo "Game tidak ditemukan.";
+                echo "Game tidak ditemukan";
             }
         } else {
-            echo "ID atau nama game tidak valid.";
+            echo "ID atau nama game tidak valid";
         }
     }
 }

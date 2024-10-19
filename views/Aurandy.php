@@ -25,7 +25,7 @@
             <?php include "./includes/sidebar.php"; ?>
             <div class="col-10 p-4">
                 <p class="fs-1">Tidur ajalah</p>
-                <p class="fs-3">ppppp:</p>
+                <p class="fs-3">ga jadi tidur ah disuruh ngoding :</p>
                 <div class="list-group mb-4">
                     <?php foreach ($games as $game): ?> <!-- Ganti $aurandy->getAllGames() dengan $games -->
                         <li class="list-group-item">

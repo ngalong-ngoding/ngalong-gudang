@@ -6,11 +6,13 @@ require_once "./controllers/FatahController.php";
 require_once "./controllers/RohimContoller.php";
 require_once "./controllers/MajidController.php";
 require_once "./controllers/AzriController.php";
+require_once "./controllers/MichaelController.php";
 
 $fatahController = new FatahController();
 $rohimController = new RohimContoller();
 $MajidController = new MajidController();
 $AzriController = new AzriController();
+$michaelController = new MichaelController();
 
 $routes = [
     "fatah" => [$fatahController, "index"],
@@ -30,6 +32,10 @@ $routes = [
     "azri/store" => [$AzriController, "store"],
     "azri/delete" => [$AzriController, "delete"],
     "azri/edit" => [$AzriController, "edit"], 
+    "michael" => [$michaelController, "index"],
+    "michael/store" => [$michaelController, "store"],
+    "michael/delete" => [$michaelController, "delete"],
+    "michael/edit" => [$michaelController, "edit"], 
    
 ];
 

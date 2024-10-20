@@ -7,7 +7,7 @@
         </li>
         <li class="nav-item">
             <a href="arya" class="nav-link <?php echo isset($_GET["route"]) && $_GET["route"] == 'arya' ? 'active' : 'text-light-emphasis'; ?>">
-                <i class="bi bi-person"></i> Arya
+                <i class="bi bi-person"></i> Arya ss
             </a>
         </li>
         <li class="nav-item">

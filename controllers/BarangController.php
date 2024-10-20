@@ -22,8 +22,8 @@ class BarangController
     {
         $search = isset($_GET["search"]) ? $_GET["search"] : "";
 
-        // Ini kondisi buat melakukan pencarian
         $barang = $this->barangModel->getAllBarang($search);
+        $banyakBarang = count($barang);
 
         include "./views/barang/list_barang.php";
     }

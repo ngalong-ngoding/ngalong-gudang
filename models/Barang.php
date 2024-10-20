@@ -23,6 +23,6 @@ class Barang
             $stmt = $this->conn->query($query);
         }
 
-        return $stmt;
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }

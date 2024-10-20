@@ -14,7 +14,7 @@
             <?php include "./includes/sidebar.php" ?>
             <div class="col-10 p-4">
                 <div class="d-flex justify-content-between mb-4">
-                    <h1>Daftar Barang (<?php echo $barang->rowCount(); ?>)</h1>
+                    <h1>Daftar Barang (<?php echo $banyakBarang ?>)</h1>
                     <form method="GET" class="input-group mb-3 w-25" action="">
                         <span class="input-group-text" id="basic-addon1">
                             <i class="bi bi-search"></i>
@@ -24,7 +24,7 @@
                 </div>
                 <div class="row g-4">
                     <?php
-                    while ($row = $barang->fetch(PDO::FETCH_ASSOC)) {
+                    foreach ($barang as $row) {
                     ?>
                         <a class="col-3" style="text-decoration: none;">
                             <div class="card" style="cursor:pointer;">

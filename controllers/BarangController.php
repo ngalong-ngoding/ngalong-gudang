@@ -21,13 +21,9 @@ class BarangController
     public function index()
     {
         $search = isset($_GET["search"]) ? $_GET["search"] : "";
-        // print_r($this->barangModel);
-        if (!empty($search)) {
-            // nanti ini diganti getAllBarang by query param
-            $barang = $this->barangModel->getAllBarang();
-        } else {
-            $barang = $this->barangModel->getAllBarang();
-        }
+
+        // Ini kondisi buat melakukan pencarian
+        $barang = $this->barangModel->getAllBarang($search);
 
         include "./views/barang/list_barang.php";
     }

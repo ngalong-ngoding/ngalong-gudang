@@ -10,14 +10,18 @@ class Barang
         $this->conn = $db;
     }
 
-    public function getAllBarang()
+    public function getAllBarang($searchQuery = "")
     {
-        // Ini query ke sql (db)
-        $query = "SELECT * FROM " . $this->nama_table;
-
-        // Ini ngejalanin query diatas via conn yang ada di config/db.php
-        $stmt = $this->conn->prepare($query);
-        $stmt->execute();
+        if ($searchQuery) {
+            $query = "SELECT * FROM " . $this->nama_table . " WHERE nama_barang LIKE :searchQuery";
+            // Ngejalanin query yang ada diatasnya
+            $stmt = $this->conn->prepare($query);
+            $stmt->execute(["searchQuery" => "%" . $searchQuery . "%"]);
+        } else {
+            // Ini query ke sql (db) tanpa kondisi
+            $query = "SELECT * FROM " . $this->nama_table;
+            $stmt = $this->conn->query($query);
+        }
 
         return $stmt;
     }

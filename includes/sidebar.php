@@ -40,5 +40,10 @@
                 <i class="bi bi-person"></i> Rohim
             </a>
         </li>
+        <li class="nav-item">
+            <a href="barang" class="nav-link <?php echo isset($_GET["route"]) && $_GET["route"] == 'barang' ? 'active' : 'text-light-emphasis'; ?>">
+                <i class="bi bi-box"></i> Barang
+            </a>
+        </li>
     </ul>
 </div>

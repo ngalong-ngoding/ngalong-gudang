@@ -20,8 +20,14 @@ class BarangController
     // Buat nampilin list semua barang
     public function index()
     {
+        $search = isset($_GET["search"]) ? $_GET["search"] : "";
         // print_r($this->barangModel);
-        $barang = $this->barangModel->getAllBarang();
+        if (!empty($search)) {
+            // nanti ini diganti getAllBarang by query param
+            $barang = $this->barangModel->getAllBarang();
+        } else {
+            $barang = $this->barangModel->getAllBarang();
+        }
 
         include "./views/barang/list_barang.php";
     }

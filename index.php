@@ -22,6 +22,7 @@ $AurandyController = new AurandyController();
 
 $routes = [
     "barang" => [$barangController, "index"],
+    "barang/detail" => [$barangController, "detail"],
 
     "fatah" => [$fatahController, "index"],
     "fatah/store" => [$fatahController, "store"],
@@ -60,7 +61,8 @@ $routes = [
     "aurandy/edit" => [$AurandyController, "edit"],
 ];
 
-$action = $_GET["route"] ?? header("Location: aurandy");;
+$action = $_GET["route"] ?? header("Location: aurandy");; 
+
 
 
 if (array_key_exists($action, $routes)) {

@@ -27,4 +27,13 @@ class BarangController
 
         include "./views/barang/list_barang.php";
     }
+
+    public function detail()
+    {
+        $id = isset($_GET["id"]) ? $_GET["id"] : "";
+
+       $barang = $this->barangModel->getBarangById($id);
+
+        include "./views/barang/detail_barang.php";
+    }
 }

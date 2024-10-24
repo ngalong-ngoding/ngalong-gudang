@@ -26,7 +26,7 @@
                     <?php
                     foreach ($barang as $row) {
                     ?>
-                        <a class="col-3" style="text-decoration: none;">
+                        <a href=<?php echo "barang/detail?id=$row[id]" ?> class="col-3" style="text-decoration: none;">
                             <div class="card" style="cursor:pointer;">
                                 <!-- <div style="height: 240px;"> -->
                                 <img class="card-img-top" style="object-fit:cover; height: 240px;" src="assets/images/<?php echo $row["foto_barang"]; ?>" alt=<?php echo $row["foto_barang"] ?>>

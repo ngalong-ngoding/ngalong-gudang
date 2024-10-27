@@ -32,6 +32,7 @@ class Barang
         // 2. Membuat prepare statement
         $stmt = $this->conn->prepare($query);
         // 3. Membuat konek
+        // 4. Inilisasi untuk variable PDO
         $stmt->bindParam(':nama_barang', $nama_barang);
         $stmt->bindParam(':jumlah', $jumlah);
         $stmt->bindParam(':kategori', $kategori);

@@ -22,6 +22,9 @@ $AurandyController = new AurandyController();
 
 $routes = [
     "barang" => [$barangController, "index"],
+    "barang/create" => [$barangController, "store"],
+
+   
 
     "fatah" => [$fatahController, "index"],
     "fatah/store" => [$fatahController, "store"],

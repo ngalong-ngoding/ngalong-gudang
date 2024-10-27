@@ -14,7 +14,9 @@
             <?php include "./includes/sidebar.php" ?>
             <div class="col-10 p-4">
                 <div class="d-flex justify-content-between mb-4">
-                    <h1>Daftar Barang (<?php echo $banyakBarang ?>)</h1>
+                    <h1>Daftar Barang (<?php echo $banyakBarang ?>)</h1><br>
+                    <button type="button" class="btn btn-info" onclick="window.location.href='barang/create'">Tambah Barang</button>
+
                     <form method="GET" class="input-group mb-3 w-25" action="">
                         <span class="input-group-text" id="basic-addon1">
                             <i class="bi bi-search"></i>

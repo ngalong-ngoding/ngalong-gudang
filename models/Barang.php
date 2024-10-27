@@ -25,4 +25,26 @@ class Barang
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    public function addBarang($nama_barang,  $jumlah, $kategori, $deskripsi){
+        // 1. Membuat Query untuk inser kedalam database
+        $query = "INSERT INTO " . $this->nama_table . " (nama_barang, jumlah, kategori,  deskripsi) VALUES (:nama_barang, :jumlah, :kategori,  :deskripsi)";
+
+        // 2. Membuat prepare statement
+        $stmt = $this->conn->prepare($query);
+        // 3. Membuat konek
+        $stmt->bindParam(':nama_barang', $nama_barang);
+        $stmt->bindParam(':jumlah', $jumlah);
+        $stmt->bindParam(':kategori', $kategori);
+       
+        $stmt->bindParam(':deskripsi', $deskripsi);
+
+        if($stmt->execute()){
+            return true;
+        }else {
+            print_r($stmt->errorInfo());
+            return false;
+            
+        }
+        
+    }
 }

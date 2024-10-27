@@ -3,4 +3,5 @@ RewriteEngine On
 # Rewrite rule to handle clean URLs
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)?$ index.php?route=$1/$2 [L,QSA]
 RewriteRule ^([a-zA-Z0-9_-]+)$ index.php?route=$1 [L,QSA]

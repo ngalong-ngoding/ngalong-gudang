@@ -1,6 +1,6 @@
 <?php
 
-
+require_once "./controllers/BarangController.php";
 
 require_once "./controllers/FatahController.php";
 require_once "./controllers/RohimContoller.php";
@@ -9,6 +9,8 @@ require_once "./controllers/AzriController.php";
 require_once "./controllers/MichaelController.php";
 require_once "./controllers/DaniController.php";
 require_once "./controllers/AurandyController.php";
+
+$barangController = new BarangController();
 
 $fatahController = new FatahController();
 $rohimController = new RohimContoller();
@@ -19,6 +21,9 @@ $DaniController = new DaniController();
 $AurandyController = new AurandyController();
 
 $routes = [
+    "barang" => [$barangController, "index"],
+    "barang/detail" => [$barangController, "detail"],
+
     "fatah" => [$fatahController, "index"],
     "fatah/store" => [$fatahController, "store"],
     "fatah/delete" => [$fatahController, "delete"],
@@ -37,12 +42,12 @@ $routes = [
     "azri" => [$AzriController, "index"],
     "azri/store" => [$AzriController, "store"],
     "azri/delete" => [$AzriController, "delete"],
-    "azri/edit" => [$AzriController, "edit"], 
+    "azri/edit" => [$AzriController, "edit"],
     "michael" => [$michaelController, "index"],
     "michael/store" => [$michaelController, "store"],
     "michael/delete" => [$michaelController, "delete"],
-    "michael/edit" => [$michaelController, "edit"], 
-   
+    "michael/edit" => [$michaelController, "edit"],
+
     "azri/edit" => [$AzriController, "edit"],
 
     "dani" => [$DaniController, "index"],
@@ -54,10 +59,10 @@ $routes = [
     "aurandy/store" => [$AurandyController, "store"],
     "aurandy/delete" => [$AurandyController, "delete"],
     "aurandy/edit" => [$AurandyController, "edit"],
-    
 ];
 
-$action = $_GET["route"] ?? header("Location: aurandy");;
+$action = $_GET["route"] ?? header("Location: aurandy");; 
+
 
 
 if (array_key_exists($action, $routes)) {
